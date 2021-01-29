@@ -1,3 +1,51 @@
+// $(document).ready(function() {
+//     $("#form1").validate({
+//       rules: {
+//         nombre : {
+//           required: true,
+//           minlength: 3
+//         },
+//         apellido : {
+//             required: true,
+//             minlength: 2
+//           },
+//           apellido2 : {
+//             required: true,
+//             minlength: 2
+//           },
+//           telefono : {
+//             required: true,
+//             minlength: 10
+//           },
+//           ciudad : {
+//             required: true,
+//             minlength: 3
+//           },
+//           estado : {
+//           required: true,
+//           minlength: 3
+//         },
+//         email: {
+//           required: true,
+//           email: true
+//         },
+//         pass1 : {
+//             required: true,
+//             minlength: 8
+//           },
+//           pass2 : {
+//             required: true,
+//             minlength: 8
+//           }
+//       }
+//     });
+//     if (form.validate() === false) {
+//         $('#invalidCheck').prop('checked',false);
+//       }else{
+//         $('#invalidCheck').prop('checked',true);
+//       }
+//   });
+
 // $('form').on('submit', function(e){
 // e.preventDefault();
 // e.stopImmediatePropagation();
