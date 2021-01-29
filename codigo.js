@@ -16,8 +16,8 @@
         }
         if(form.checkValidity() === true){
           $('form').on('submit', function(e){
-            // e.preventDefault();
-            // e.stopImmediatePropagation();
+            e.preventDefault();
+            e.stopImmediatePropagation();
             
             $.ajax({
                 url: "http://35.167.62.109/storeutags/security/create_account",
@@ -43,7 +43,7 @@
                     }
                     else{
                         alert("Usuario guardado");
-                        $("form")[0].reset();
+                        //$("form")[0].reset();
                     }
                 },       
             });
