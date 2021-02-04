@@ -39,10 +39,10 @@
                     <div class="col-md-4 mb-3">
                       <label for="ema">Correo de Usuario</label>
                       <div class="input-group">
-                        <input name="ema" autofocus="autofocus" type="email" class="form-control" id="ema" placeholder="" aria-describedby="inputGroupPrepend" required>
-                        <div class="input-group-prepend">
+                      <div class="input-group-prepend">
                           <span class="input-group-text" id="inputGroupPrepend">@</span>
                         </div>
+                        <input name="ema" autofocus="autofocus" type="email" class="form-control" id="ema" placeholder="" aria-describedby="inputGroupPrepend" required>
                         </div>
                         <!-- <div class="valid-feedback">¡Ok válido!</div> -->
                       <div class="invalid-feedback">Complete el campo.</div>   
