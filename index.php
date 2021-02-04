@@ -43,7 +43,7 @@
                     
                     
                       <div class="col-md-4 mb-3">
-                      <label for="pass1">Password</label>
+                      <label for="pass1">Contraseña</label>
                       <div class="input-group">
                       <input name="pass1" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
                       <div class="input-group-append">
@@ -56,7 +56,7 @@
                     </div>
                 
                   <button class="btn btn-primary" id="boton" name="boton" type="submit">Enviar</button>
-
+                  </center>
                
                 </form>
 
@@ -81,7 +81,7 @@
             </div>       
         </div>                  
     </div>
-</center>
+
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script src="index.js"></script> 	  	
     <script src="./src/registro.js"></script>
