@@ -44,7 +44,7 @@
                     else{
                         alert("Usuario guardado");
                         //$("form")[0].reset();
-                        window.location="login.html";
+                        window.location="index.php";
                     }
                 },       
             });

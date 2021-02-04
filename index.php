@@ -7,7 +7,12 @@
     <link rel="shortcut icon" href="#" />      
     <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:300,400,500' rel='stylesheet' type='text/css'>
-	  <link rel="stylesheet" href="estilos.css">
+      <link rel="stylesheet" href="estilos.css">
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script src="./jquery/jquery-3.3.1.min.js"></script>
     <script src="./popper/popper.min.js"></script>
     <script src="./bootstrap4/js/bootstrap.min.js"></script>
@@ -23,99 +28,62 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5 bg-white ">
-        <div class="card-header">NUEVO REGISTRO</div>
+        <div class="card-header">INICIAR SESIÓN</div>
         <div class="card-body">
+        
         <form id="form1" name="form1" class="needs-validation" novalidate>
-                  <div class="form-row">
+                  
+                  
+
                     <div class="col-md-4 mb-3">
-                      <label for="nombre">Nombre</label>
-                      <input name="nombre" type="text" class="form-control" id="nombre" placeholder="" value="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>    
-                    </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="apellido">Apellido Paterno</label>
-                      <input name="apellido" type="text" class="form-control" id="apellido" placeholder="" value="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
-                  </div>
-                  <div class="form-row">
-                      <div class="col-md-4 mb-3">
-                      <label for="apellido2">Apellido Materno</label>
-                      <input name="apellido2" type="text" class="form-control" id="apellido2" placeholder="" value="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
-                      <div class="col-md-4 mb-3">
-                      <label for="telefono">Número de Teléfono</label>
-                      <input name="telefono" type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type = "number"
-    maxlength = "10" class="form-control" id="telefono" placeholder="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
-                      </div>
-                    <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="ciudad">Ciudad</label>
+                      <label for="ciudad">Correo de Usuario</label>
                       <input name="ciudad" type="text" class="form-control" id="ciudad" placeholder="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
+                      <!-- <div class="valid-feedback">¡Ok válido!</div> -->
                       <div class="invalid-feedback">Complete el campo.</div>   
                     </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="estado">Estado</label>
-                      <input name="estado" type="text" class="form-control" id="estado" placeholder="" required>
-                      <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
-                    </div>
-                    <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="ema">Email</label>
-                      <div class="input-group">
-                        <div class="input-group-prepend">
-                          <span class="input-group-text" id="inputGroupPrepend">@</span>
-                        </div>
-                        <input name="ema" type="email" class="form-control" id="ema" placeholder="" aria-describedby="inputGroupPrepend" required>
-                        <div class="valid-feedback">¡Ok válido!</div>
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                      </div>
-                    </div>
-                  </div>
-                <div class="form-row">
+                    
+                    
                       <div class="col-md-4 mb-3">
                       <label for="pass1">Password</label>
+                      <div class="input-group">
                       <input name="pass1" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
+                      <div class="input-group-append">
+                        <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
+                      </div>
+                    </div>
                       <span id="passstrength"></span>
-                      <!--<div class="valid-feedback">¡Ok válido!</div>-->
+                      <!-- <div class="valid-feedback">¡Ok válido!</div> -->
                       <div class="invalid-feedback">Complete el campo.</div>  
                     </div>
-                    <div class="col-md-4 mb-3">
-                      <label for="pass2">Confirmar Password</label>
-                      <input name="pass2" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass2" placeholder="" required>
-                      <!--<div class="valid-feedback">¡Ok válido!</div>-->
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
-                  </div>
                 
-                  <div class="g-recaptcha" data-sitekey="6LceszwaAAAAAG1_-UmFvef7RQB2YCZUQ2QxQtAX"></div> 
-                  
-                  <div class="form-group">
-                    <div class="form-check">
-                      <input class="form-check-input" name="invalidCheck" type="checkbox" value="" id="invalidCheck" required>
-                      <label class="form-check-label" for="invalidCheck">Acepto términos y condiciones</label>
-                      <div class="valid-feedback">¡Aceptado!</div>
-                    </div>
-                  </div>
-                  <button class="btn btn-primary" id="boton" name="boton" type="submit" disabled>Enviar</button>
+                  <button class="btn btn-primary" id="boton" name="boton" type="submit">Enviar</button>
+
+               
                 </form>
+
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <a href="registro.html" id="register-form-link">Regístrate ahora</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="text-center">
+                                <a href="#" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
         </div>   
     </div>
             </div>       
         </div>                  
     </div>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="codigo.js"></script> 	  	
+    <script src="index.js"></script> 	  	
     <script src="./src/registro.js"></script>
   </body>
 </html>
