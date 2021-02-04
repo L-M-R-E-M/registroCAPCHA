@@ -69,7 +69,7 @@
                         </div>
                         <div class="col-lg-12">
                             <div class="text-center">
-                                <a href="#" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
+                                <a href="correo.html" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
                             </div>
                         </div>
                     </div>
