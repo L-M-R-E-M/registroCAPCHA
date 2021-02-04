@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>login</title>  
+    <title>codigo</title>  
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="shortcut icon" href="#" />      
@@ -28,24 +28,16 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5 bg-white ">
-        <div class="card-header">INICIAR SESIÓN</div>
+        <div class="card-header">CAMBIAR CONTRASEÑA</div>
         <div class="card-body">
         
         <form id="form1" name="form1" class="needs-validation" novalidate>
-                  
-        <center>
-                    <div class="col-md-4 mb-3">
-                      <label for="ciudad">Correo de Usuario</label>
-                      <input name="ciudad" type="text" class="form-control" id="ciudad" placeholder="" required>
-                      <!-- <div class="valid-feedback">¡Ok válido!</div> -->
-                      <div class="invalid-feedback">Complete el campo.</div>   
-                    </div>
                     
-                    
+          <center>
                       <div class="col-md-4 mb-3">
-                      <label for="pass1">Password</label>
+                      <label for="code">Hemos enviado una clave a tu correo electrónico, ingresala a continuación</label>
                       <div class="input-group">
-                      <input name="pass1" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
+                      <input name="code" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="code" placeholder="" required>
                       <div class="input-group-append">
                         <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                       </div>
@@ -56,35 +48,16 @@
                     </div>
                 
                   <button class="btn btn-primary" id="boton" name="boton" type="submit">Enviar</button>
-
+                  </center>
                
                 </form>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <a href="registro.html" id="register-form-link">Regístrate ahora</a>
-                            </div>
-                        </div>
-                        <div class="col-lg-12">
-                            <div class="text-center">
-                                <a href="#" tabindex="5" class="forgot-password">¿Has olvidado tu contraseña?</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                
         </div>   
     </div>
             </div>       
         </div>                  
     </div>
-</center>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script src="index.js"></script> 	  	
-    <script src="./src/registro.js"></script>
+    <script src="code.js"></script> 	  	
+    <!-- <script src="./src/registro.js"></script> -->
 
   </body>
 </html>
