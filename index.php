@@ -34,18 +34,27 @@
         <form id="form1" name="form1" class="needs-validation" novalidate>
                   
         <center>
+                    
+                    
                     <div class="col-md-4 mb-3">
-                      <label for="ciudad">Correo de Usuario</label>
-                      <input name="ciudad" type="text" class="form-control" id="ciudad" placeholder="" required>
-                      <!-- <div class="valid-feedback">¡Ok válido!</div> -->
+                      <label for="ema">Correo de Usuario</label>
+                      <div class="input-group">
+                        <input name="ema" autofocus="autofocus" type="email" class="form-control" id="ema" placeholder="" aria-describedby="inputGroupPrepend" required>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="inputGroupPrepend">@</span>
+                        </div>
+                        </div>
+                        <!-- <div class="valid-feedback">¡Ok válido!</div> -->
                       <div class="invalid-feedback">Complete el campo.</div>   
+                      
                     </div>
+                  
                     
-                    
+                  
                       <div class="col-md-4 mb-3">
                       <label for="pass1">Contraseña</label>
                       <div class="input-group">
-                      <input name="pass1" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
+                      <input name="pass1" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
                       <div class="input-group-append">
                         <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                       </div>
@@ -53,12 +62,12 @@
                       <span id="passstrength"></span>
                       <!-- <div class="valid-feedback">¡Ok válido!</div> -->
                       <div class="invalid-feedback">Complete el campo.</div>  
-                    </div>
+                    </div><br>
                 
-                  <button class="btn btn-primary" id="boton" name="boton" type="submit">Enviar</button>
+                  <button class="btn btn-primary" id="boton" name="boton" type="submit">Iniciar Sesión</button>
                   </center>
                
-                </form>
+                </form><br><br>
 
                 <div class="form-group">
                     <div class="row">

@@ -87,6 +87,24 @@ $(function() {
   }
 });
 
+$(document).ready(function() {	
+  function validarRecapcha(){
+    //validar el estado del CAPCHA cada 3 segundos
+    var res = grecaptcha.getResponse();
+  
+    if(res.length === 0){
+      
+      $('#boton').attr("disabled", true);
+
+    } else {
+      
+      $('#boton').attr("disabled", false);
+      
+    }
+  }
+  setInterval(validarRecapcha, 3000);
+});
+
 
 $(document).ready(function() {
   //variables

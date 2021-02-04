@@ -4,54 +4,42 @@
     window.addEventListener('load', function() {
       // Fetch all the forms we want to apply custom Bootstrap validation styles to
       var forms = document.getElementsByClassName('needs-validation');
-      var net = 0;
       // Loop over them and prevent submission
       var validation = Array.prototype.filter.call(forms, function(form) {
         form.addEventListener('submit', function(event) {
           if (form.checkValidity() === false) {
             event.preventDefault();
             event.stopPropagation();
-            net = 1;
-            //alert("Complete todos los apartados");
           }
-        //   if(form.checkValidity() === true){
-        //     $('form').on('submit', function(e){
-        //       e.preventDefault();
-        //       e.stopImmediatePropagation();
-              
-        //       $.ajax({
-        //           url: "http://35.167.62.109/storeutags/security/create_account",
-        //           type: 'POST',
-        //           contentType: 'application/json',
-        //           data: JSON.stringify({
-        //               first_name: $('#nombre').val(),
-        //               middle_name:$('#apellido').val(),
-        //               last_name:$('#apellido2').val(),
-        //               phone_number:$('#telefono').val(),
-        //               address: {
-        //                   city:$('#ciudad').val(),
-        //                   state:$('#estado').val(),
-        //               },
-        //               email:$('#ema').val(),
-        //               password:$('#pass1').val(),
-        //               password_confirmation:$('#pass2').val()
-        //           }),
-        //           dataType: 'json',
-        //           success: function(resp) {
-        //               if(resp.error_code == "DuplicatedAccount"){
-        //                   alert("Este correo esta ya esta en uso");
-        //               }
-        //               else{
-        //                   alert("Usuario guardado");
-        //                   //$("form")[0].reset();
-        //                   window.location="login.html";
-        //               }
-        //           },       
-        //       });
-              
-              
-        //       });
-        //   }
+          if(form.checkValidity() === true){
+            llamarAjax();
+            
+          }
+          function llamarAjax(){
+            //Aquí declaras el objeto que pasarás como parámetro
+                    event.preventDefault();
+                    event.stopImmediatePropagation();
+                  
+                  $.ajax({
+                      url: "http://35.167.62.109/storeutags/security/request_recovery_code",
+                      type: 'POST',
+                      contentType: 'application/json',
+                      data: JSON.stringify({
+                          email:$('#ema').val(),
+                      }),
+                      dataType: 'json',
+                      success: function(resp) {
+                          if(resp.error_code == "AccountDoesNotExist"){
+                              alert("Este correo no existe");
+                          }
+                          else{
+                              alert("Codigo enviado con éxito");
+                              //$("form")[0].reset();
+                              window.location="code.html";
+                          }
+                      },       
+                  });
+          }
         form.classList.add('was-validated');
   
         }, false);
@@ -59,3 +47,5 @@
       
     }, false);
   })();
+
+  

@@ -37,7 +37,7 @@
                       <div class="col-md-4 mb-3">
                       <label for="code">Hemos enviado una clave a tu correo electrónico, ingresala a continuación</label>
                       <div class="input-group">
-                      <input name="code" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="code" placeholder="" required>
+                      <input name="code" autofocus="autofocus" type="password" class="form-control" id="code" placeholder="" required>
                       <div class="input-group-append">
                         <button id="show_password" class="btn btn-primary" type="button" onclick="mostrarPassword()"> <span class="fa fa-eye-slash icon"></span> </button>
                       </div>
@@ -47,10 +47,42 @@
                       <div class="invalid-feedback">Complete el campo.</div>  
                     </div>
                 
-                  <button class="btn btn-primary" id="boton" name="boton" type="submit">Enviar</button>
+                  <button class="btn btn-primary" id="boton" name="boton" type="submit">Verificar</button>
                   </center>
                
-                </form>
+                </form><br>
+
+                <div class="form-group">
+                  <div class="row">
+                      <div class="col-lg-12">
+                          <div class="text-center">
+                              <a href="correo.html" id="register-form-link">Enviar de nuevo</a>
+                          </div>
+                      </div>
+                  </div>
+              </div><br>
+
+                <form id="form2" name="form2" class="needs-validation" novalidate>
+                  <center>
+                  <!-- <div class="form-row"> -->
+                        <div class="col-md-4 mb-3">
+                        <label for="pass1">Contrsaeña</label>
+                        <input name="pass1" autofocus="autofocus" min="8" max="10" type="password" class="form-control" id="pass1" placeholder="" required>
+                        <span id="passstrength"></span>
+                        <!--<div class="valid-feedback">¡Ok válido!</div>-->
+                        <div class="invalid-feedback">Complete el campo.</div>  
+                      </div>
+                      <div class="col-md-4 mb-3">
+                        <label for="pass2">Confirmar Contraseña</label>
+                        <input name="pass2" min="8" max="10" type="password" class="form-control" id="pass2" placeholder="" required>
+                        <!--<div class="valid-feedback">¡Ok válido!</div>-->
+                        <div class="invalid-feedback">Complete el campo.</div>   
+                      </div>
+                    <!-- </div> -->
+  
+                    <button class="btn btn-primary" id="boton2" name="boton2" type="submit">Cambiar</button>
+                  </center>
+                  </form>
         </div>   
     </div>
             </div>       

@@ -78,3 +78,24 @@ $('#ShowPassword').click(function () {
     $('#Password').attr('type', $(this).is(':checked') ? 'text' : 'password');
 });
 });
+
+$(document).ready(function(){
+  //pruebas no hacer caso
+  function ocultar(){
+    $('#form2').hide(); //oculto mediante id
+  }
+  function mostrar(){
+    $('#form2').show(); //muestro mediante id
+  }
+  setInterval(ocultar, 3000);
+  setInterval(mostrar, 6000);
+
+  //$("#mostrar").on( "click", function() {
+    // $('#target').show(); //muestro mediante id
+    // $('.target').show(); //muestro mediante clase
+   //});
+  //$("#ocultar").on( "click", function() {
+    // $('#target').hide(); //oculto mediante id
+    // $('.target').hide(); //muestro mediante clase
+  //});
+});
