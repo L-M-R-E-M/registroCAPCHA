@@ -108,7 +108,7 @@
         </div>                  
     </div>
 
-    <script src="./jquery/index.js"></script> 	  	
+    <script src="./src/index.js"></script> 	  	
 
   </body>
 </html>
