@@ -19,9 +19,40 @@ $(document).ready(function() {
   var cor = localStorage.getItem("SaveCorreo");
   var pas = localStorage.getItem("SavePass");
   var one = 0;
+  var mos = 0;
   function checarsesion(){
+  if(cor == "" && pas == ""){
+  ////////////////////////////////////////////////
   if(check == ""){
+    mos = mos + 1;
+    if(mos == 1){
     alert("No cuenta con una sesión activa");
+    }
+    window.location="index.php";
+  }else{
+    /*Se ejecuta cuando cerramos la ventana de google*/
+    // https://es.stackoverflow.com/questions/103956/c%C3%B3mo-detectar-el-evento-del-cierre-de-tu-p%C3%A1gina-web
+    window.addEventListener("beforeunload", function (e) {
+      var confirmationMessage = "\o/";
+    
+      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+      alert( '¿Quieres abandonar mi página?' );
+
+          /*Captura de datos escrito en los inputs*/        
+          var exit = "";
+          /*Guardando los datos en el LocalStorage*/
+          localStorage.setItem("UserName", exit);
+          return confirmationMessage;                            //Webkit, Safari, Chrome
+    });
+          
+  }
+  ////////////////////////////////////////////////
+  }else{
+  if(check == ""){
+    mos = mos + 1;
+    if(mos == 1){
+    alert("No cuenta con una sesión activa");
+    }
     window.location="index.php";
   }else{
     one = one + 1;
@@ -51,6 +82,7 @@ $(document).ready(function() {
       }
       },       
   });
+  }
   }
   }
   setInterval(checarsesion, 3000);

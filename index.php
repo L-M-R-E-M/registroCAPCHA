@@ -108,9 +108,7 @@
         </div>                  
     </div>
 
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-    <script src="indexphpp.js"></script> 	  	
-    <!-- <script src="./src/registro.js"></script> -->
+    <script src="./jquery/index.js"></script> 	  	
 
   </body>
 </html>

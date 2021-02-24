@@ -42,6 +42,7 @@
                           if(resp.error_code == "AccountDoesNotExist"){
                               cont = 0;
                               alert("Este correo no existe");
+                              $("form")[0].reset();
                           }
                           else{
                               alert("Código enviado con éxito");
@@ -238,23 +239,8 @@ $(document).ready(function() {
     return true;
   });
 
-  // $(document).ready(function(){
-//   //pruebas no hacer caso
-//   function ocultar(){
-//     $('#form2').hide(); //oculto mediante id
-//   }
-//   function mostrar(){
-//     $('#form2').show(); //muestro mediante id
-//   }
-//   setInterval(ocultar, 3000);
-//   setInterval(mostrar, 6000);
-
-//   //$("#mostrar").on( "click", function() {
-//     // $('#target').show(); //muestro mediante id
-//     // $('.target').show(); //muestro mediante clase
-//    //});
-//   //$("#ocultar").on( "click", function() {
-//     // $('#target').hide(); //oculto mediante id
-//     // $('.target').hide(); //muestro mediante clase
-//   //});
-// });
+  $(document).ready(function(){    
+    $('#iniciar').click(function(){  
+        window.location="index.php";
+    });   
+  });

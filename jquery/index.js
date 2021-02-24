@@ -36,7 +36,12 @@
                       success: function(resp) {
                         if(resp.error_code == "EmailAndPasswordDoesNotMatch"){
                           cont = 0;
-                          borrarinicio();
+                          /*Captura de datos escrito en los inputs*/        
+                          var correx = "";
+                          var passsx = "";
+                          /*Guardando los datos en el LocalStorage*/
+                          localStorage.setItem("SaveCorreo", correx);
+                          localStorage.setItem("SavePass", passsx);
                           alert("Usuario y/o contraseña incorrectos");
                           $("form")[0].reset();
                       }

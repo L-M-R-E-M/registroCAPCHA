@@ -199,5 +199,11 @@ $('#pass1').keyup(function(e) {
   return true;
 });
 
+$(document).ready(function(){    
+  $('#iniciar').click(function(){  
+      window.location="index.php";
+  });   
+});
+
 
 
