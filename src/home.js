@@ -26,7 +26,7 @@ $(document).ready(function() {
   if(check == ""){
     mos = mos + 1;
     if(mos == 1){
-    alert("No cuenta con una sesión activa");
+    alert("No cuentas con una sesión activa, error 50126");
     }
     window.location="index.php";
   }else{
@@ -51,7 +51,7 @@ $(document).ready(function() {
   if(check == ""){
     mos = mos + 1;
     if(mos == 1){
-    alert("No cuenta con una sesión activa");
+    alert("No cuentas con una sesión activa, error 50126");
     }
     window.location="index.php";
   }else{
