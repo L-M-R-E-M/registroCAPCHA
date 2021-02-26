@@ -33,16 +33,17 @@ $(document).ready(function() {
     /*Se ejecuta cuando cerramos la ventana de google*/
     // https://es.stackoverflow.com/questions/103956/c%C3%B3mo-detectar-el-evento-del-cierre-de-tu-p%C3%A1gina-web
     window.addEventListener("beforeunload", function (e) {
-      var confirmationMessage = "\o/";
+      // var confirmationMessage = "\o/";
     
-      (e || window.event).returnValue = confirmationMessage; //Gecko + IE
-      alert( '¿Quieres abandonar mi página?' );
-
-          /*Captura de datos escrito en los inputs*/        
+      /*Captura de datos escrito en los inputs*/        
           var exit = "";
           /*Guardando los datos en el LocalStorage*/
           localStorage.setItem("UserName", exit);
-          return confirmationMessage;                            //Webkit, Safari, Chrome
+
+    //   (e || window.event).returnValue = confirmationMessage; //Gecko + IE
+    //   alert( '¿Quieres abandonar mi página?' );
+
+    //       return confirmationMessage;                            //Webkit, Safari, Chrome
     });
           
   }
@@ -78,7 +79,9 @@ $(document).ready(function() {
           var code = resp.data.session_id;
           localStorage.setItem("UserCode", code);
 
-          alert("¡¡¡Bienvenido otra vez " + nom + "!!!");
+          // if(one >= 2){
+          // alert("¡¡¡Bienvenido otra vez " + nom + "!!!");
+          // }
       }
       },       
   });
