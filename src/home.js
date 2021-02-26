@@ -22,7 +22,7 @@ $(document).ready(function() {
   var mos = 0;
   function checarsesion(){
   if(cor == "" && pas == ""){
-  ////////////////////////////////////////////////
+
   if(check == ""){
     mos = mos + 1;
     if(mos == 1){
@@ -47,7 +47,7 @@ $(document).ready(function() {
     });
           
   }
-  ////////////////////////////////////////////////
+  
   }else{
   if(check == ""){
     mos = mos + 1;
@@ -79,9 +79,9 @@ $(document).ready(function() {
           var code = resp.data.session_id;
           localStorage.setItem("UserCode", code);
 
-          // if(one >= 2){
+          
           // alert("¡¡¡Bienvenido otra vez " + nom + "!!!");
-          // }
+          
       }
       },       
   });
