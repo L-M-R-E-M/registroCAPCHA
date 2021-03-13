@@ -24,7 +24,6 @@ $(document).ready(function() {
   var one = 0;
   var mos = 0;
   function checarsesion(){
-    // comparars();
   if(cor == "" && pas == ""){
 
   if(check == ""){
@@ -377,19 +376,6 @@ var acom = 0;
       localStorage.setItem("x7", v2);
     }
 } 
-
-// function comparars(){
-//   var v1 = localStorage.getItem("x4");
-//   var v2 = localStorage.getItem("x7");
-
-//     if(v1 == v2){
-//       $("#divError").empty();
-//     }else{
-//       errorSearch();
-//     }  
-
-//     // alert(" " + v1 + ", " + v2);
-// }
 
 
 function errorSearch(){

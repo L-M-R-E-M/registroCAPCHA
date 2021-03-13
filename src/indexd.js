@@ -25,7 +25,6 @@ $(document).ready(function() {
       if(nombre == ""){
         /*Mostrar datos almacenados*/      
       document.getElementById("nombre").innerHTML = nose;
-      // comparars();
       }else{
         /*Mostrar datos almacenados*/      
       document.getElementById("nombre").innerHTML = nombre;
@@ -304,19 +303,6 @@ var acom = 0;
       $("#divError").empty();
     }
 } 
-
-// function comparars(){
-//   var v1 = localStorage.getItem("x1");
-//   var v2 = localStorage.getItem("x2");
-
-//     if(v1 == v2){
-//       $("#divError").empty();
-//     }else{
-//       errorSearch();
-//     }  
-
-//     // alert(" " + v1 + ", " + v2);
-// }
 
 
 function errorSearch(){
