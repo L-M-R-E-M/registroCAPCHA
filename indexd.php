@@ -38,7 +38,17 @@
                   </div>   
                 </div>
               </form>
-                <div class="col-md-4 mb-3">
+                <div class="col-md-auto">
+                <div class="text-right">
+                <div class="card-header">Hola, <label type="text" id="nombre"></label></div>
+                </div>
+              </div>
+              <div class="col-md-auto">
+                  <div class="text-right">
+                  <!-- <button type="button" class="btn btn-primary" id="cerrarse">INICIAR SESIÓN</button> -->
+                  </div>
+              </div>
+              <div class="col-md-auto">
                   <div class="text-right">
                   <button type="button" class="btn btn-primary" id="cerrarse">INICIAR SESIÓN</button>
                   </div>
@@ -87,16 +97,18 @@
         <div class="row">
             <div class="col-lg-12">
             <div class="card shadow-lg p-3 mb-5 bg-white ">
-            <div class="text-right">
+            <!-- <div class="text-right">
             <div class="card-header">Hola, <label type="text" id="nombre"></label></div>
-            </div>
+            </div> -->
         <div class="card-body">
 
         <!-- Ar -->
         <!-- Contenido genereado desde la respuesta de la búsqueda.r -->
         <div class="col-8" id="divError"></div>
-        <div class="col-8" id="divConteo"></div>
-        <div class="col-8" id="divItems">    
+        <div class="col" id="divConteo"></div>
+        <div class="row justify-content-center">
+        <div class="col-6" id="divItems1"></div>
+        <div class="col-6" id="divItems2"></div>
         </div>
         
         </div>   
@@ -120,12 +132,37 @@
 
 
     <div id="ningunaBusqueda" style="display: none;">
-          
-                  <!-- <div class="col-md-4 col-lg-3 col-xl-3">
-                    <a href="#!">                             
+                  
+      
+        <!-- <div class="row">
+
+            <div class="col">
+              <div class="card-body">
+                <div class="row mb-4">
+                  <div class="col-md-4 col-lg-3 col-xl-3">
+                    <a href="login.html">                             
                       <img class="img-fluid w-100" src="https://thumbs.dreamstime.com/b/lupa-trastornada-s%C3%ADmbolo-no-encontrado-lindo-y-s-fracasado-122205900.jpg"> 
                     </a>
-                  </div> -->
+                  </div>
+                  <div class="col-md-5 col-lg-9 col-xl-9">
+                    <div class="d-flex justify-content-between">
+                      <div>
+                        <br/>
+                        <h5>LO SENTIMOS</h5>                                                       
+                        <p class="text-muted text-uppercase small">No se pudo encontrar ningún dato de: "ITEM_DATA" :,V</p>
+                      </div>
+                      <div>
+                        <br/>
+                        <p><span><strong></strong></span></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="mb-4">  
+              </div>
+          </div>
+
+      </div> -->
     </div>
 
 
@@ -147,7 +184,9 @@
                     <div class="d-flex justify-content-between">
                       <div>
                         <br/>
-                        <h5>ITEM_SHORT_DESCRIPTION</h5>                                                       
+                        <a href="login.html"> 
+                        <h5>ITEM_SHORT_DESCRIPTION</h5>
+                        </a>                                                       
                         <p class="text-muted text-uppercase small">ITEM_LONG_DESCRIPTION</p>
                       </div>
                       <div>

@@ -97,13 +97,15 @@ $(document).ready(function() {
         if(this.checked) {
           document.getElementById("search").value = "";
 
-          $("#divItems").empty();
+          $("#divItems1").empty();
+          $("#divItems2").empty();
 
           bucarPorCategoria();
         }else{
           document.getElementById("search").value = "";
 
-          $("#divItems").empty();
+          $("#divItems1").empty();
+          $("#divItems2").empty();
           
           bucarPorCategoria();
         }
@@ -198,10 +200,12 @@ function searchByText(){
 }
 
 var algo = 0;
+var acom = 0;
   function render_items(data){
 
     //Limpiar los productos.
-    $("#divItems").empty();
+    $("#divItems1").empty();
+    $("#divItems2").empty();
     $("#divConteo").empty();
     $("#divError").empty();
 
@@ -218,6 +222,10 @@ var algo = 0;
 
     //Agregarlos uno a uno.
     $.each(data.data.items, function(i, item) {
+      acom = acom + 1;
+    if(acom >= 5){
+      acom = 1;
+    }
       
       //Cargar el template.
       var html_ITEM = $("#template_item").html();
@@ -232,8 +240,14 @@ var algo = 0;
       html_ITEM = html_ITEM.replace('ITEM_SMALL_IMAGE', item.images_small);
       html_ITEM = html_ITEM.replace('ITEM_PRICE', item.price);
 
+      if(acom == 1 || acom == 3){
       //Agregar el ITEM.
-      $("#divItems").append(html_ITEM);
+      $("#divItems1").append(html_ITEM);
+      }
+      if(acom == 2 || acom == 4){
+      //Agregar el ITEM.
+      $("#divItems2").append(html_ITEM);
+      }
 
     });
   }
@@ -308,7 +322,8 @@ var algo = 0;
 function errorSearch(){
 
   $("#divConteo").empty();
-  $("#divItems").empty();
+  $("#divItems1").empty();
+  $("#divItems2").empty();
 
   //Limpiar los productos.
   $("#divError").empty();
@@ -320,8 +335,11 @@ function errorSearch(){
   html_ITEM2 = html_ITEM2.replace('<!--', '');
   html_ITEM2 = html_ITEM2.replace('-->', '');
 
+  html_ITEM2 = html_ITEM2.replace('ITEM_DATA', $("#search").val());
+
   //Agregar el ITEM.
   $("#divError").append(html_ITEM2);
+  
 }
 
 /*mostrar error */
