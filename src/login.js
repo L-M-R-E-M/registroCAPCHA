@@ -53,7 +53,7 @@
                           localStorage.setItem("UserCode", code);
 
                           alert("¡¡¡Bienvenido " + nom + "!!!");
-                          window.location="home.html";
+                          window.location="homed.html";
                       }
                       },       
                   });
@@ -64,7 +64,25 @@
     });
     
   }, false);
-})();  
+})(); 
+
+
+
+/*Iniciar sesión por default*/
+$(document).ready(function() {
+  var corr = localStorage.getItem("SaveCorreo");
+  var pass = localStorage.getItem("SavePass");	
+  function iniciarSesion(){
+    if(corr == "" && pass == ""){
+      //En este  apartado no pasa nada aún
+    }else{
+      window.location="homed.html";
+    }
+  }
+  setInterval(iniciarSesion, 100);
+});
+
+
 
 function mostrarPassword(){
     var cambio = document.getElementById("pass1");
@@ -114,6 +132,6 @@ $(function() {
 
 $(document).ready(function(){    
   $('#iniciar').click(function(){  
-      window.location="index.php";
+      window.location="login.html";
   });   
 });

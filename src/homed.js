@@ -3,13 +3,16 @@ $(document).ready(function(){
         // window.close();
         /*Captura de datos escrito en los inputs*/        
         var borrar = "";
+        var borrar2 = 0;
         /*Guardando los datos en el LocalStorage*/
         localStorage.setItem("SaveCorreo", borrar);
         localStorage.setItem("SavePass", borrar);
         localStorage.setItem("UserName", borrar);
         localStorage.setItem("UserCode", borrar);
+        localStorage.setItem("x4", borrar2);
+        localStorage.setItem("x7", borrar2);
         
-        window.location="index.php";
+        window.location="indexd.php";
     });   
 });
 
@@ -21,6 +24,7 @@ $(document).ready(function() {
   var one = 0;
   var mos = 0;
   function checarsesion(){
+    // comparars();
   if(cor == "" && pas == ""){
 
   if(check == ""){
@@ -28,8 +32,18 @@ $(document).ready(function() {
     if(mos == 1){
     alert("No cuentas con una sesión activa, error 50126");
     }
-    window.location="index.php";
+    window.location="indexd.php";
   }else{
+    mos = mos + 1;
+    if(mos == 1){
+    //cargar el filtro de categorias.
+    cargarCategories();
+
+    //hacer una busqueda vacía inicial para que muestre todos los productos.
+    searchByText();
+    }
+    
+    
     /*Se ejecuta cuando cerramos la ventana de google*/
     // https://es.stackoverflow.com/questions/103956/c%C3%B3mo-detectar-el-evento-del-cierre-de-tu-p%C3%A1gina-web
     window.addEventListener("beforeunload", function (e) {
@@ -54,7 +68,7 @@ $(document).ready(function() {
     if(mos == 1){
     alert("No cuentas con una sesión activa, error 50126");
     }
-    window.location="index.php";
+    window.location="indexd.php";
   }else{
     one = one + 1;
   }
@@ -98,14 +112,20 @@ $(document).ready(function() {
 
 /*Funcion Cargar y Mostrar datos*/
 $(document).ready(function() {	
-    function mostrarUsuario(){
-      /*Obtener datos almacenados*/
-      var nombre = localStorage.getItem("UserName");
+  function mostrarUsuario(){
+    /*Obtener datos almacenados*/
+    var nombre = localStorage.getItem("UserName");
+    var nose = "UsuarioX";
+    if(nombre == ""){
       /*Mostrar datos almacenados*/      
-      document.getElementById("nombre").innerHTML = nombre;
+    document.getElementById("nombre").innerHTML = nose;
+    }else{
+      /*Mostrar datos almacenados*/      
+    document.getElementById("nombre").innerHTML = nombre;
     }
-    setInterval(mostrarUsuario, 100);
-  });
+  }
+  setInterval(mostrarUsuario, 100);
+});
 
 
   function cargarCategories(){
@@ -189,6 +209,8 @@ $(document).ready(function() {
             render_items(data);
             conteoTerminado(data);
 
+            $("#divError").empty();
+
         },
         error: function(jqXHR, status){
 
@@ -226,6 +248,8 @@ function searchByText(){
           render_items(data);
           conteoTerminado(data);
 
+          $("#divError").empty();
+
           icon();
 
           $('#category_1').prop('checked',false);
@@ -247,39 +271,22 @@ function searchByText(){
 }
 
 
-// function errorSearch(){
-
-//     // var x = jqXHR.length;
-
-//     // if(x <= 2){
-//     //Limpiar pantalla
-//     $("#divConteo").empty();
-//     $("#divItems").empty();
-
-//     //Limpiar los productos.
-//     $("#divError").empty();
-
-//     //Cargar el template.
-//     var html_ITEM2 = $("#ningunaBusqueda").html();
-
-//     // Reemplazar los comentarios.
-//     html_ITEM2 = html_ITEM2.replace('<!--', '');
-//     html_ITEM2 = html_ITEM2.replace('-->', '');
-
-//     //Agregar el ITEM.
-//     $("#divError").append(html_ITEM2);
-//     // }
-    
-
-// }
-
-
-
-
+var algo = 0;
   function render_items(data){
 
     //Limpiar los productos.
     $("#divItems").empty();
+    $("#divConteo").empty();
+
+    algo = algo + 1;
+
+    if(algo >= 4){
+      algo = 0;
+    }
+
+    localStorage.setItem("x4", algo);
+
+    xsd();
 
     //Agregarlos uno a uno.
     $.each(data.data.items, function(i, item) {
@@ -343,4 +350,63 @@ function searchByText(){
       $('.icon').removeClass('fa fa-refresh fa-spin fa-1x fa-fw').addClass('fa fa-spinner fa-pulse fa-1x fa-fw');
       cambio = 0;
     }
+
+    localStorage.setItem("x7", cambio);
+    
+    var v1 = localStorage.getItem("x4");
+    var v2 = localStorage.getItem("x7");
+    if(v1 == v2){
+    }else{
+      localStorage.setItem("x4", v2);
+      localStorage.setItem("x7", v2);
+    }
 } 
+
+// function comparars(){
+//   var v1 = localStorage.getItem("x4");
+//   var v2 = localStorage.getItem("x7");
+
+//     if(v1 == v2){
+//       $("#divError").empty();
+//     }else{
+//       errorSearch();
+//     }  
+
+//     // alert(" " + v1 + ", " + v2);
+// }
+
+
+function errorSearch(){
+
+  $("#divConteo").empty();
+  $("#divItems").empty();
+
+  //Limpiar los productos.
+  $("#divError").empty();
+
+  //Cargar el template.
+  var html_ITEM2 = $("#ningunaBusqueda").html();
+
+  // Reemplazar los comentarios.
+  html_ITEM2 = html_ITEM2.replace('<!--', '');
+  html_ITEM2 = html_ITEM2.replace('-->', '');
+
+  //Agregar el ITEM.
+  $("#divError").append(html_ITEM2);
+}
+
+/*mostrar error */
+function xsd(){  
+  var v1 = localStorage.getItem("x4");
+  var v2 = localStorage.getItem("x7");
+  
+  //Cargar el template.
+  var html_ITEM = $("#template_item").html();
+  
+  if(html_ITEM == '<!---->'|true && v1 != v2){
+    // alert("si");
+    errorSearch();
+  }else{
+    $("#divError").empty();
+  }
+  }
